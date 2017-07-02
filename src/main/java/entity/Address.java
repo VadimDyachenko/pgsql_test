@@ -3,14 +3,14 @@ package entity;
 /**
  * @author Vadim Dyachenko
  */
-public class Adress {
+public class Address {
     private Long id;
     private String country;
     private String city;
     private String street;
     private String postCode;
 
-    public Adress() {
+    public Address() {
 
     }
 
@@ -59,7 +59,7 @@ public class Adress {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Adress adress = (Adress) o;
+        Address adress = (Address) o;
 
         if (id != null ? !id.equals(adress.id) : adress.id != null) return false;
         if (country != null ? !country.equals(adress.country) : adress.country != null) return false;
@@ -80,7 +80,7 @@ public class Adress {
 
     @Override
     public String toString() {
-        return "Adress{" +
+        return "Address{" +
                 "id=" + id +
                 ", country='" + country + '\'' +
                 ", city='" + city + '\'' +
