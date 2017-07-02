@@ -1,6 +1,7 @@
 package entity;
 
 import java.sql.Date;
+import java.util.Set;
 
 /**
  * @author Vadim Dyachenko
@@ -10,7 +11,8 @@ public class Employee {
     private String firstName;
     private String lastName;
     private Date birthday;
-    private Long adressID;
+    private Address address;
+    private Set<Project> projects;
 
     public Employee() {
     }
@@ -47,36 +49,20 @@ public class Employee {
         this.birthday = birthday;
     }
 
-    public Long getAdressID() {
-        return adressID;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAdressID(Long adressID) {
-        this.adressID = adressID;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Employee employee = (Employee) o;
-
-        if (id != null ? !id.equals(employee.id) : employee.id != null) return false;
-        if (firstName != null ? !firstName.equals(employee.firstName) : employee.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(employee.lastName) : employee.lastName != null) return false;
-        if (birthday != null ? !birthday.equals(employee.birthday) : employee.birthday != null) return false;
-        return adressID != null ? adressID.equals(employee.adressID) : employee.adressID == null;
+    public Set<Project> getProjects() {
+        return projects;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
-        result = 31 * result + (adressID != null ? adressID.hashCode() : 0);
-        return result;
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
     }
 
     @Override
@@ -86,7 +72,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthday=" + birthday +
-                ", adressID=" + adressID +
+                ", adress=" + address +
                 '}';
     }
 }

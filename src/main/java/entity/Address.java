@@ -55,30 +55,6 @@ public class Address {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Address adress = (Address) o;
-
-        if (id != null ? !id.equals(adress.id) : adress.id != null) return false;
-        if (country != null ? !country.equals(adress.country) : adress.country != null) return false;
-        if (city != null ? !city.equals(adress.city) : adress.city != null) return false;
-        if (street != null ? !street.equals(adress.street) : adress.street != null) return false;
-        return postCode != null ? postCode.equals(adress.postCode) : adress.postCode == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
-        result = 31 * result + (street != null ? street.hashCode() : 0);
-        result = 31 * result + (postCode != null ? postCode.hashCode() : 0);
-        return result;
-    }
-
-    @Override
     public String toString() {
         return "Address{" +
                 "id=" + id +
